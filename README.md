@@ -26,51 +26,51 @@ DeepLIFT attributes a model’s classification output to certain input features 
 
 Case | Averaged logit | Input clip  /  Impaired LV function model's focus  /  AV regurgitation model's focus
 ----|----|----
-Normal1 | 0.9999 | ![image](project/model/DeepLIFT_confident/normal_cases/Normal1_logit0.9999.gif)
-Normal2 | 0.9999 | ![image](project/model/DeepLIFT_confident/normal_cases/Normal2_logit0.9999.gif)
-Normal3 | 0.9999 | ![image](project/model/DeepLIFT_confident/normal_cases/Normal3_logit0.9999.gif)
-Normal4 | 0.9999 | ![image](project/model/DeepLIFT_confident/normal_cases/Normal4_logit0.9999.gif)
-Normal5 | 0.9999 | ![image](project/model/DeepLIFT_confident/normal_cases/Normal5_logit0.9999.gif)
-Normal6 | 0.9999 | ![image](project/model/DeepLIFT_confident/normal_cases/Normal6_logit0.9999.gif)
-Normal7 | 0.9998 | ![image](project/model/DeepLIFT_confident/normal_cases/Normal7_logit0.9998.gif)
-Normal8 | 0.9998 | ![image](project/model/DeepLIFT_confident/normal_cases/Normal8_logit0.9998.gif)
-Normal9 | 0.9998 | ![image](project/model/DeepLIFT_confident/normal_cases/Normal9_logit0.9998.gif)
-Normal10 | 0.9997 | ![image](project/model/DeepLIFT_confident/normal_cases/Normal10_logit0.9997.gif)
+Normal1 | 0.9999 | ![image](projectDDDIF/model/DeepLIFT_confident/normal_cases/Normal1_logit0.9999.gif)
+Normal2 | 0.9999 | ![image](projectDDDIF/model/DeepLIFT_confident/normal_cases/Normal2_logit0.9999.gif)
+Normal3 | 0.9999 | ![image](projectDDDIF/model/DeepLIFT_confident/normal_cases/Normal3_logit0.9999.gif)
+Normal4 | 0.9999 | ![image](projectDDDIF/model/DeepLIFT_confident/normal_cases/Normal4_logit0.9999.gif)
+Normal5 | 0.9999 | ![image](projectDDDIF/model/DeepLIFT_confident/normal_cases/Normal5_logit0.9999.gif)
+Normal6 | 0.9999 | ![image](projectDDDIF/model/DeepLIFT_confident/normal_cases/Normal6_logit0.9999.gif)
+Normal7 | 0.9998 | ![image](projectDDDIF/model/DeepLIFT_confident/normal_cases/Normal7_logit0.9998.gif)
+Normal8 | 0.9998 | ![image](projectDDDIF/model/DeepLIFT_confident/normal_cases/Normal8_logit0.9998.gif)
+Normal9 | 0.9998 | ![image](projectDDDIF/model/DeepLIFT_confident/normal_cases/Normal9_logit0.9998.gif)
+Normal10 | 0.9997 | ![image](projectDDDIF/model/DeepLIFT_confident/normal_cases/Normal10_logit0.9997.gif)
 
 DeepLIFT analyses reveal that the LV myocardium and mitral valve were important for detecting impaired LV function, while the tip of the mitral valve anterior leaflet, during opening, was considered important for detecting AV regurgitation.
-Apart from the above examples, all confident cases are provided, which the predicted probability of being the normal class by the two models are both higher than 0.98. See the full list [here](project/model/DeepLIFT_confident/normal_cases).
+Apart from the above examples, all confident cases are provided, which the predicted probability of being the normal class by the two models are both higher than 0.98. See the full list [here](projectDDDIF/model/DeepLIFT_confident/normal_cases).
 
 #### Representative disease cases
 * Mildly impaired LV
 
 Case | Logit | Input clip  /  Impaired LV function model's focus
 ----|----|----
-MildILV1 | 0.9989 | ![image](project/model/DeepLIFT_confident/disease_cases/MildILV1_logit0.9989.gif)
-MildILV2 | 0.9988 | ![image](project/model/DeepLIFT_confident/disease_cases/MildILV2_logit0.9988.gif)
+MildILV1 | 0.9989 | ![image](projectDDDIF/model/DeepLIFT_confident/disease_cases/MildILV1_logit0.9989.gif)
+MildILV2 | 0.9988 | ![image](projectDDDIF/model/DeepLIFT_confident/disease_cases/MildILV2_logit0.9988.gif)
 
 * Severely impaired LV
 
 Case | Logit | Input clip  /  Impaired LV function model's focus
 ----|----|----
-SevereILV1 | 1.0000 | ![image](project/model/DeepLIFT_confident/disease_cases/SevereILV1_logit1.0000.gif)
-SevereILV2 | 1.0000 | ![image](project/model/DeepLIFT_confident/disease_cases/SevereILV2_logit1.0000.gif)
+SevereILV1 | 1.0000 | ![image](projectDDDIF/model/DeepLIFT_confident/disease_cases/SevereILV1_logit1.0000.gif)
+SevereILV2 | 1.0000 | ![image](projectDDDIF/model/DeepLIFT_confident/disease_cases/SevereILV2_logit1.0000.gif)
 
 * Mild AV regurgitation
 
 Case | Logit | Input clip  /  AV regurgitation model's focus
 ----|----|----
-MildAVR1 | 0.7240 | ![image](project/model/DeepLIFT_confident/disease_cases/MildAVR1_logit0.7240.gif)
-MildAVR2 | 0.6893 | ![image](project/model/DeepLIFT_confident/disease_cases/MildAVR2_logit0.6893.gif)
+MildAVR1 | 0.7240 | ![image](projectDDDIF/model/DeepLIFT_confident/disease_cases/MildAVR1_logit0.7240.gif)
+MildAVR2 | 0.6893 | ![image](projectDDDIF/model/DeepLIFT_confident/disease_cases/MildAVR2_logit0.6893.gif)
 
 * Substantial AV regurgitation
 
 Case | Logit | Input clip  /  AV regurgitation model's focus
 ----|----|----
-SubstantialAVR1 | 0.9919 | ![image](project/model/DeepLIFT_confident/disease_cases/SubstantialAVR1_logit0.9919.gif)
-SubstantialAVR2 | 0.9645 | ![image](project/model/DeepLIFT_confident/disease_cases/SubstantialAVR2_logit0.9645.gif)
+SubstantialAVR1 | 0.9919 | ![image](projectDDDIF/model/DeepLIFT_confident/disease_cases/SubstantialAVR1_logit0.9919.gif)
+SubstantialAVR2 | 0.9645 | ![image](projectDDDIF/model/DeepLIFT_confident/disease_cases/SubstantialAVR2_logit0.9645.gif)
 
 When analyzing disease cases, the highlighted regions in different queries are quite different. We speculate that this might be due to a higher heterogeneity in the appearance of the disease cases.
-Apart from the above examples, more confident disease cases are provided. See the full list [here](project/model/DeepLIFT_confident/disease_cases).
+Apart from the above examples, more confident disease cases are provided. See the full list [here](projectDDDIF/model/DeepLIFT_confident/disease_cases).
 
 
 ## Loading the trained model weights
