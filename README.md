@@ -7,6 +7,7 @@
 - [Loading the trained model weights](#Loading-the-trained-model-weights)
 - [Run the code on your own dataset](#Run-the-code-on-your-own-dataset)
 
+![image](projectDDDIF/Fig1.png)
 In this project, we aimed to develop a deep learning (DL) method to automatically detect impaired left ventricular (LV) function and aortic valve (AV) regurgitation from apical four-chamber (A4C) ultrasound cineloops. Two R(2+1)D convolutional neural networks (CNNs) were trained to detect the respective diseases. Subsequently, tSNE was used to visualize the embedding of the extracted feature vectors, and DeepLIFT was used to identify important image features associated with the diagnostic tasks. 
 
 
