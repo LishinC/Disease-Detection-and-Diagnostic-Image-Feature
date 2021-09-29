@@ -8,7 +8,7 @@
 - [Run the code on your own dataset](#Run-the-code-on-your-own-dataset)
 
 ![image](projectDDDIF/Fig1.png)
-In this project, we aimed to develop a deep learning (DL) method to automatically detect impaired left ventricular (LV) function and aortic valve (AV) regurgitation from apical four-chamber (A4C) ultrasound cineloops. Two R(2+1)D convolutional neural networks (CNNs) were trained to detect the respective diseases. Subsequently, tSNE was used to visualize the embedding of the extracted feature vectors, and DeepLIFT was used to identify important image features associated with the diagnostic tasks. 
+In this project, we aimed to develop a deep learning (DL) method to automatically detect impaired left ventricular (LV) function and aortic valve (AV) regurgitation from apical four-chamber (A4C) ultrasound cineloops. Two R(2+1)D convolutional neural networks (CNNs) were trained to detect the respective diseases. Subsequently, tSNE was used to visualize the embedding of the extracted feature vectors, and DeepLIFT was used to identify important image features associated with the diagnostic tasks.
 
 
 ## The why
@@ -39,7 +39,7 @@ Normal9 | 0.9998 | ![image](projectDDDIF/model/DeepLIFT_confident/normal_cases/N
 Normal10 | 0.9997 | ![image](projectDDDIF/model/DeepLIFT_confident/normal_cases/Normal10_logit0.9997.gif)
 
 DeepLIFT analyses reveal that the LV myocardium and mitral valve were important for detecting impaired LV function, while the tip of the mitral valve anterior leaflet, during opening, was considered important for detecting AV regurgitation.
-Apart from the above examples, all confident cases are provided, which the predicted probability of being the normal class by the two models are both higher than 0.98. See the full list [here](projectDDDIF/model/DeepLIFT_confident/normal_cases).
+Apart from the above examples, all confident cases are provided, which the predicted probability of being the normal class by the two models are both higher than 0.98. See the full list [here](projectDDDIF/model/DeepLIFT_confident/normal_cases/normal_case_list.md).
 
 #### Representative disease cases
 * Mildly impaired LV
@@ -71,11 +71,22 @@ SubstantialAVR1 | 0.9919 | ![image](projectDDDIF/model/DeepLIFT_confident/diseas
 SubstantialAVR2 | 0.9645 | ![image](projectDDDIF/model/DeepLIFT_confident/disease_cases/SubstantialAVR2_logit0.9645.gif)
 
 When analyzing disease cases, the highlighted regions in different queries are quite different. We speculate that this might be due to a higher heterogeneity in the appearance of the disease cases.
-Apart from the above examples, more confident disease cases are provided. See the full list [here](projectDDDIF/model/DeepLIFT_confident/disease_cases).
+Apart from the above examples, more confident disease cases are provided. See the full list [here](projectDDDIF/model/DeepLIFT_confident/disease_cases/disease_case_list.md).
+
+
+## Run the code on your own dataset
+The dataloader in `util` can be modified to fit your own dataset. To run the full workflow, namely training, validation, testing, and the subsequent analyses, simply run the following commands:
+```
+git clone https://github.com/LishinC/Disease-Detection-and-Diagnostic-Image-Feature.git
+cd Disease-Detection-and-Diagnostic-Image-Feature/util
+pip install -e .
+cd ../projectDDDIF
+python main.py
+```
 
 
 ## Loading the trained model weights
-The model weights are made available for external validation, or as pretraining for other echocardiography-related tasks. To load the weights, simply follow:
+The model weights are made available for external validation, or as pretraining for other echocardiography-related tasks. To load the weights, navigate to the `projectDDDIF` folder, and run the following python code:
 ```
 import torch
 import torch.nn as nn
@@ -92,11 +103,6 @@ model.fc = nn.Linear(model.fc.in_features, 3)
 model.load_state_dict(torch.load(model_path))
 ```
 
-## Run the code on your own dataset
-The dataloader in `util` can be modified to fit your own dataset. To run the full workflow, namely training, validation, testing, and the subsequent analyses, simply run:
-```
-cd util
-pip install -e .
-cd ../projectDDDIF
-python main.py
-```
+
+## Questions and feedback
+For techinical problems or comments about the project, feel free to contact `l.cheng@lumc.nl`.

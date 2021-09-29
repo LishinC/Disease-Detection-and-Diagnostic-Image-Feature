@@ -23,8 +23,7 @@ def forward(batch, model, device, return_one_batch, criterion=nn.CrossEntropyLos
         y_true = Y.item()
         one_batch = [ID[0], loss.item(), y_true, y_pred, output[:, 1].item()]
 
-        if output[0,y_true].item()>0.98:
-            analyze(X, [y_true], model, 1, root + 'test/DeepLIFT', ID[0])
+        analyze(X, [y_true], model, 1, 'model/DeepLIFT/', ID[0])
 
         return loss, one_batch
     else:
@@ -33,9 +32,9 @@ def forward(batch, model, device, return_one_batch, criterion=nn.CrossEntropyLos
 
 if __name__ == '__main__':
 
-    root = './model/try/'
-    kwargs = {'in_channel': 3, 'out_channel': 3, 'split_folder': 'split_000all_104_105_106/'}
+    root = './model/regurg/'
+    kwargs = {'in_channel': 1, 'out_channel': 3}
 
-    b = Backbone(root, range(2), forward,
+    b = Backbone(root, range(200), forward,
                  create_dataloader=create_dataloader, initialize_load_model=initialize_load_model)
-    b.run(workflow='test',**kwargs)
+    b.run(**kwargs)
