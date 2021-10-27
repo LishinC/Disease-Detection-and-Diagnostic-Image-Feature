@@ -1,15 +1,21 @@
-# Revealing unforeseen diagnostic image features with deep learning by detecting cardiovascular diseases from apical four-chamber ultrasounds
+# Disease Detection and Diagnostic Image Features
 
 - [The why](#The-why)
 - [Image features associated with the diagnostic tasks](#Image-features-associated-with-the-diagnostic-tasks)
   - [Representative normal cases](#Representative-normal-cases)
   - [Representative disease cases](#Representative-disease-cases)
-- [Loading the trained model weights](#Loading-the-trained-model-weights)
 - [Run the code on your own dataset](#Run-the-code-on-your-own-dataset)
+- [Loading the trained model weights](#Loading-the-trained-model-weights)
+
+
+This is the official repository for:
+```
+Li-Hsin Cheng, Pablo B.J. Bosch, Rutger F.H. Hofman, Timo B. Brakenhoff, Eline F. Bruggemans, Rob J. van der Geest, and Eduard R. Holman. (2021).
+Revealing unforeseen diagnostic image features with deep learning by detecting cardiovascular diseases from apical four-chamber ultrasounds. arXiv:2110.12915."
+```
 
 ![image](projectDDDIF/Fig1.png)
 In this project, we aimed to develop a deep learning (DL) method to automatically detect impaired left ventricular (LV) function and aortic valve (AV) regurgitation from apical four-chamber (A4C) ultrasound cineloops. Two R(2+1)D convolutional neural networks (CNNs) were trained to detect the respective diseases. Subsequently, tSNE was used to visualize the embedding of the extracted feature vectors, and DeepLIFT was used to identify important image features associated with the diagnostic tasks.
-
 
 ## The why
 * An automated echocardiography interpretation method requiring only limited views as input, say A4C, could make cardiovascular disease diagnosis more accessible.
@@ -39,7 +45,7 @@ Normal9 | 0.9998 | ![image](projectDDDIF/model/DeepLIFT_confident/normal_cases/N
 Normal10 | 0.9997 | ![image](projectDDDIF/model/DeepLIFT_confident/normal_cases/Normal10_logit0.9997.gif)
 
 DeepLIFT analyses reveal that the LV myocardium and mitral valve were important for detecting impaired LV function, while the tip of the mitral valve anterior leaflet, during opening, was considered important for detecting AV regurgitation.
-Apart from the above examples, all confident cases are provided, which the predicted probability of being the normal class by the two models are both higher than 0.98. See the full list [here](projectDDDIF/model/DeepLIFT_confident/normal_cases/normal_case_list.md).
+The case **Normal1** is the case shown in the paper. Apart from the above examples, all confident normal cases are provided for which the predicted probability of being the normal class by the two models was both higher than 0.98 in both models. See the full list [here](projectDDDIF/model/DeepLIFT_confident/normal_cases/normal_case_list.md).
 
 #### Representative disease cases
 * Mildly impaired LV

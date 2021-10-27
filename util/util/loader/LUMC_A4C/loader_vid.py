@@ -1,25 +1,8 @@
 import numpy as np
-#from glob2 import glob
 import torch
 from torch.utils.data.dataset import Dataset
 import random
 from skimage.transform import rotate
-
-
-def cropping(volume, target_t, target_xy, t, x, y, last_dim):
-    if last_dim:
-        volume = volume[t:t+target_t, x:x+target_xy, y:y+target_xy, :]
-    else:
-        volume = volume[t:t+target_t, x:x+target_xy, y:y+target_xy]
-    return volume
-
-
-def rotation(X, deg):
-    # tdim, xdim, ydim = X.shape[0], X.shape[1], X.shape[2]
-    X = np.moveaxis(X,0,-1)     # move time dimension to the last dimension
-    X = rotate(X, deg)          # requires input of shape [xdim, ydim, channel]
-    X = np.moveaxis(X,-1,0)     # move time dimension back to the first dimension
-    return X
 
 
 class loader(Dataset):
@@ -31,40 +14,9 @@ class loader(Dataset):
     def __getitem__(self, index):
         filepath = self.X_list[index]
         X = np.load(filepath)
-        filepath = filepath.split('/')[-1]
-        ID = filepath[:filepath.find('.npy')]
-        c = filepath[:3]
 
-        # Regurgitation/impairedLV
-        if (c=='000')|(c=='0_1')|(c=='0_2')|(c=='0_3'):
-            Y = torch.zeros(1)
-        elif (c=='104')            |(c=='400'):
-            Y = torch.ones(1)
-        elif (c=='105')|(c=='106') |(c=='401'):
-            Y = torch.ones(1)*2
+        # Replace with own loader. Output X should have size [channel=3, num_frame=30, x_dimension=112, y_dimension=112]
 
-        if self.aug != False:
-            t = random.randint(0, X.shape[0] - 30)
-            xy = random.randint(0, 12)
-
-            # Rotation
-            deg = random.randint(-15, 15)
-            X = rotation(X, deg)
-
-        else:
-            t = 0
-            xy = 6
-
-        # Translation
-        X = cropping(X, 30, 112, t, xy, xy, False)
-
-        # Color Channel
-        if self.rgb_channel==3:
-            X = np.stack((X,X,X), axis=0)
-        elif self.rgb_channel==1:
-            X = np.expand_dims(X, axis=0)
-
-        # output X of size [3, 30, 112, 112] for RGB; [2, 30, 112, 112] for FLOW or ACC
         X = torch.from_numpy(X).float()
         return X, Y, ID
 
@@ -73,7 +25,7 @@ class loader(Dataset):
 
 
 def create_dataloader(mode, batch_size=16, num_workers=[4, 4], data_folder='../data/LUMC_A4C/ver3/',
-                      split_folder='split_000all_400_401/', **kwargs): #split_folder='split_000all_104_105_106/'
+                      split_folder='split_000all_400_401/', **kwargs):
 
     X_list = np.load(data_folder + split_folder + '/' + mode + '_list_RGB.npy').tolist()
     if mode == 'train':

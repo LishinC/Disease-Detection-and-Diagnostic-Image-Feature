@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def create_header_clas(mode, log_val_only, task, header_train=None, header_eval=None):
+def create_header_clas(mode, log_val_only, header_train=None, header_eval=None):
     if mode == 'train':
         if header_train is None:
             if log_val_only:
