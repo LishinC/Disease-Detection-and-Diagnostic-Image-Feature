@@ -55,12 +55,12 @@ Case | Logit | Input clip  /  Impaired LV function model's focus
 MildILV1 | 0.9989 | ![image](projectDDDIF/model/DeepLIFT_confident/disease_cases/MildILV1_logit0.9989.gif)
 MildILV2 | 0.9988 | ![image](projectDDDIF/model/DeepLIFT_confident/disease_cases/MildILV2_logit0.9988.gif)
 
-* Severely impaired LV
+* Substantially impaired LV
 
 Case | Logit | Input clip  /  Impaired LV function model's focus
 ----|----|----
-SevereILV1 | 1.0000 | ![image](projectDDDIF/model/DeepLIFT_confident/disease_cases/SevereILV1_logit1.0000.gif)
-SevereILV2 | 1.0000 | ![image](projectDDDIF/model/DeepLIFT_confident/disease_cases/SevereILV2_logit1.0000.gif)
+SubstantialILV1 | 1.0000 | ![image](projectDDDIF/model/DeepLIFT_confident/disease_cases/SevereILV1_logit1.0000.gif)
+SubstantialILV2 | 1.0000 | ![image](projectDDDIF/model/DeepLIFT_confident/disease_cases/SevereILV2_logit1.0000.gif)
 
 * Mild AV regurgitation
 
